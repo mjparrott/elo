@@ -13,6 +13,13 @@ const config = {
     "1": 36
   }
 }
-const ranking = run({}, scores.fifa, config)
-console.log(ranking)
-ReactDOM.render(<App ranking={ranking}/>, document.getElementById('root'));
+
+const configs = Object.keys(scores).map((key) => {
+  return {
+    title: key,
+    scores: scores[key],
+    ranking: run({}, scores[key], config)
+  }
+})
+
+ReactDOM.render(<App configs={configs} />, document.getElementById('root'));

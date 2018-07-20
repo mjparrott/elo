@@ -3,6 +3,8 @@ import './App.css';
 
 class App extends Component {
   render() {
+    const { configs } = this.props
+    console.log(configs)
     return (
       <div>
         <header>
