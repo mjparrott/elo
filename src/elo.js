@@ -1,9 +1,8 @@
 const DEFAULT_RANKING = 2000
-const KFACTOR = 30
-const MULTIPLIERS = {
-  "0": 0.8,
-  "0.5": 1,
-  "1": 1.6
+const KFACTORS = {
+  "0": 28,
+  "0.5": 28,
+  "1": 36
 }
 
 export function run(initialRanking, allScores) {
@@ -67,7 +66,7 @@ function calcOurRatingDelta(ourRating, theirRating, ourResult) {
     throw new Error("not a valid result")
   }
   const ourChance = calcOurChanceToWin(ourRating, theirRating)
-  return Math.round(MULTIPLIERS[ourResult] * KFACTOR * (ourResult - ourChance))
+  return Math.round(KFACTORS[ourResult] * (ourResult - ourChance))
 }
 
 function calcOurChanceToWin(ourRating, theirRating) {
