@@ -2,15 +2,6 @@ import React, { Component } from 'react';
 
 const PAGE_TITLE = 'FIFA 18 + Arpad Elo'
 
-const GAME_TITLES = {
-  fifa18: 'FIFA 18'
-}
-
-const LIST_TITLES = {
-  ranking: 'Ranking',
-  scores: 'Scores'
-}
-
 function RankingList({ list }) {
   return (
     <table className="table table-hover table-borderless">
