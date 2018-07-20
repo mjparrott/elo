@@ -15,10 +15,13 @@ const config = {
 }
 
 const configs = Object.keys(scores).map((key) => {
+  const rankingMap = run({}, scores[key], config)
   return {
-    title: key,
+    key,
     scores: scores[key],
-    ranking: run({}, scores[key], config)
+    ranking: Object.keys(rankingMap)
+      .map(key => ({ key, score: rankingMap[key] }))
+      .sort((a, b) => b.score - a.score)
   }
 })
 
