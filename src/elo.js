@@ -1,14 +1,7 @@
-const DEFAULT_RANKING = 2000
-const KFACTORS = {
-  "0": 28,
-  "0.5": 28,
-  "1": 36
-}
-
-export function run(initialRanking, allScores) {
+export function run(initialRanking, allScores, config) {
   return allScores.reduce((currRanking, currScore) => {
     const results = scoreToResults(currScore)
-    return processRankingWithResults(currRanking, results)
+    return processRankingWithResults(currRanking, results, config)
   }, initialRanking)
 }
 
@@ -46,27 +39,28 @@ function createResult(ourName, theirName, ourResult) {
   return { ourName, theirName, ourResult }
 }
 
-function processRankingWithResults(ranking, resultPair) {
+function processRankingWithResults(ranking, resultPair, config) {
   const newRankings = resultPair.map((result) => {
-    const ourRanking = ranking[result.ourName] || DEFAULT_RANKING
-    const theirRanking = ranking[result.theirName] || DEFAULT_RANKING
+    const ourRanking = ranking[result.ourName] || config.defaultRanking
+    const theirRanking = ranking[result.theirName] || config.defaultRanking
     return {
       [result.ourName]: ourRanking + calcOurRatingDelta(
         ourRanking,
         theirRanking,
-        result.ourResult
+        result.ourResult,
+        config.kfactors
       )
     }
   })
   return Object.assign({}, ranking, ...newRankings)
 }
 
-function calcOurRatingDelta(ourRating, theirRating, ourResult) {
+function calcOurRatingDelta(ourRating, theirRating, ourResult, kfactors) {
   if ([0, 0.5, 1].indexOf(ourResult) === -1) {
     throw new Error("not a valid result")
   }
   const ourChance = calcOurChanceToWin(ourRating, theirRating)
-  return Math.round(KFACTORS[ourResult] * (ourResult - ourChance))
+  return Math.round(kfactors[ourResult] * (ourResult - ourChance))
 }
 
 function calcOurChanceToWin(ourRating, theirRating) {
