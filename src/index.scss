@@ -1,9 +1,29 @@
 @import "./bootstrap/scss/bootstrap.scss";
+@import "./fonts.scss";
 
 body {
   margin: 0;
   padding: 0;
-  font-family: $font-family-monospace;
-  background-color: #ffb4a2;
+}
+
+header h1 {
+  font-family: "gongnormal";
+  line-height: 1.44;
+  letter-spacing: -2px;
+  transform: skewY(-9deg) skewX(-3deg) rotate(-0deg);
   color: #6d6875;
+  text-shadow: 2px 2px 0px #595560;
+}
+
+.subtitle {
+  font-family: monospace;
+  text-transform: uppercase;
+  line-height: 1;
+  font-weight: 900;
+  opacity: 0.36;
+  background: rgba(0, 0, 0, 0.12);
+}
+
+table {
+  font-family: monospace;
 }

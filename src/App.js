@@ -4,15 +4,15 @@ const PAGE_TITLE = 'FIFA 18 + Arpad Elo'
 
 function RankingList({ list }) {
   return (
-    <table className="table table-hover table-borderless">
+    <table className="table table-borderless mb-3" style={{ maxWidth: "1px", margin: "auto" }}>
       <tbody>
         {list.map(rank => (
           <tr key={rank.key}>
-            <td className="p-4 text-right" style={{ width: "50%" }}>
+            <td className="p-3 text-right" style={{ width: "50%" }}>
               <h4 className="m-0"><strong>{rank.score}</strong></h4>
             </td>
-            <td className="p-4 text-left" style={{ width: "50%" }}>
-              <h4 className="m-0">{rank.key}</h4>
+            <td className="p-3 text-left" style={{ width: "50%" }}>
+              <h4 className="m-0 budgies">{rank.key}</h4>
             </td>
           </tr>
         ))}
@@ -23,7 +23,7 @@ function RankingList({ list }) {
 
 function ScoresList({ list }) {
   return (
-    <table className="table table-hover table-borderless">
+    <table className="table table-borderless mb-3">
       <tbody>
         {list.map((score, index) => (
           <tr key={index}>
@@ -61,17 +61,17 @@ class App extends Component {
     const { configs } = this.props
     const currConf = configs[this.state.currConfKey]
     return (
-      <div className="container">
-        <header className="py-3 mb-5 text-center">
-          <h1 className="mb-0">{PAGE_TITLE}</h1>
+      <div>
+        <header className="py-5 text-center" style={{ backgroundColor: "#F7F7F7" }}>
+          <h1 className="my-5">PagerDuty's<br/>FIFA 18<br/>Elo Board</h1>
         </header>
         <main>
-          <div className="mt-5">
-            <h3 className="text-center py-3 mb-4">Ranking</h3>
+          <div className="pb-5" style={{ backgroundColor: "#ffe5d9" }}>
+            <h2 className="text-center py-4 mb-5 subtitle">Ranking</h2>
             <RankingList list={currConf['ranking']} />
           </div>
-          <div className="mt-5">
-            <h3 className="text-center py-3 mb-4">Scores</h3>
+          <div className="pb-5" style={{ backgroundColor: "#ffcad4" }}>
+            <h2 className="text-center py-4 mb-5 subtitle">Scores</h2>
             <ScoresList list={currConf['scores']} />
           </div>
         </main>
