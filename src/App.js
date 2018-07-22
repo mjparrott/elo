@@ -60,18 +60,25 @@ class App extends Component {
     const currConf = configs[this.state.currConfKey]
     return (
       <div>
-        <header className="py-5 text-center" style={{ backgroundColor: "#F7F7F7" }}>
-          <h1 className="my-5">PagerDuty's<br/>FIFA 18<br/>Elo Board</h1>
+        <header className="py-5 text-center" style={{ backgroundColor: "#fff" }}>
+          <h1 className="">PagerDuty's<br/><span>FIFA 18</span><br/>Elo Board</h1>
         </header>
         <main>
-          <div className="pb-5" style={{ backgroundColor: "#ffe5d9" }}>
-            <h2 className="text-center py-4 mb-5 subtitle">Ranking</h2>
+          <section className="pb-5" style={{ backgroundColor: "#ffe5d9" }}>
+            <h2 className="text-center py-4 mb-5 subtitle">ranking</h2>
             <RankingList list={currConf['ranking']} />
-          </div>
-          <div className="pb-5" style={{ backgroundColor: "#ffcad4" }}>
-            <h2 className="text-center py-4 mb-5 subtitle">Scores</h2>
+          </section>
+          <section className="pb-5" style={{ backgroundColor: "#ffcad4" }}>
+            <h2 className="text-center py-4 mb-5 subtitle">scores</h2>
+            <div className="container">
+              <div className="row justify-content-center">
+                <div className="col-md-6 text-center">
+                  <p>To add more scores, <a rel="noopener noreferrer" target="_blank" href="https://github.com/PagerDuty/elo/edit/master/src/scores.json">edit the JSON file in GitHub</a>. Once you merge to master, Netlify will create a new build</p>
+                </div>
+              </div>
+            </div>
             <ScoresList list={currConf['scores']} />
-          </div>
+          </section>
         </main>
       </div>
     );

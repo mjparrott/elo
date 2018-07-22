@@ -1,3 +1,17 @@
+@import "./bootstrap/scss/functions";
+@import "./bootstrap/scss/variables";
+@import "./bootstrap/scss/mixins";
+
+$spacer: 1rem;
+$spacers: (
+  6: ($spacer * 6)
+);
+
+$link-color:                $gray-600;
+$link-decoration:           underline;
+$link-hover-color:          darken($link-color, 15%);
+$link-hover-decoration:     underline;
+
 @import "./bootstrap/scss/bootstrap.scss";
 @import "./fonts.scss";
 
@@ -7,23 +21,28 @@ body {
 }
 
 header h1 {
-  font-family: "gongnormal";
-  line-height: 1.44;
-  letter-spacing: -2px;
+  margin: 7.5rem 0 9rem 0;
+  padding-left: 4px;
+  font-family: "sf_speakeasyoblique";
+  font-size: $display3-size;
+  line-height: 1.00;
+  letter-spacing: 4px;
   transform: skewY(-9deg) skewX(-3deg) rotate(-0deg);
-  color: #6d6875;
-  text-shadow: 2px 2px 0px #595560;
+  color: #bcffc5;
+  text-shadow: 1px 2px 0px #8acc93;
+  span {
+    color: #bcffe0;
+    text-shadow: 1px 2px 0px #7cc1a1;
+  }
 }
 
 .subtitle {
-  font-family: monospace;
-  text-transform: uppercase;
+  font-family: "fantasque_sans_monoregular";
   line-height: 1;
-  font-weight: 900;
-  opacity: 0.36;
-  background: rgba(0, 0, 0, 0.12);
+  color: #FFF;
+  background: rgba(0, 0, 0, 0.06);
 }
 
-table {
-  font-family: monospace;
+section {
+  font-family: "fantasque_sans_monoregular";
 }
