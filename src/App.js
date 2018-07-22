@@ -94,7 +94,7 @@ class App extends Component {
                   <h5><strong>Arpad Emrick Elo</strong></h5>
                   <p><em>1903-1992</em></p>
                   <p>Born in Egyházaskesző, Austro-Hungarian Empire (now located in modern-day Hungary), Arpad was the inventor of the Elo ranking system, a physics professor at Marquette University in Wisconsin, a master-level Chess player, a nine-time champion or co-champion of Wisconsin between 1935 and 1961, and a World Chess Hall of Fame inductee (circa 1988).</p>
-                  <p>If you're curious, check out the Wikipedia pages for the <ExternalLink href="https://en.wikipedia.org/wiki/Elo_rating_system">Elo ranking system</ExternalLink> or <ExternalLink href="https://en.wikipedia.org/wiki/Arpad_Elo">Arpad Elo</ExternalLink> himself.</p>
+                  <p>If you're curious, check out the Wikipedia pages for the <ExternalLink href="https://en.wikipedia.org/wiki/Elo_rating_system">Elo ranking system</ExternalLink> or <ExternalLink href="https://en.wikipedia.org/wiki/Arpad_Elo">Arpad Elo</ExternalLink> himself to learn more.</p>
                 </div>
               </div>
             </div>
