@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-const PAGE_TITLE = 'FIFA 18 + Arpad Elo'
-
 function RankingList({ list }) {
   return (
     <table className="table table-borderless mb-3" style={{ maxWidth: "1px", margin: "auto" }}>
