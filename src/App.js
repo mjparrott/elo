@@ -117,7 +117,7 @@ class App extends Component {
             <div className="container">
               <div className="row justify-content-center">
                 <div className="col-md-6 col-lg-5 text-center">
-                  <p>To add more scores, <ExternalLink href="https://github.com/PagerDuty/elo/edit/master/src/scores.json">edit the JSON file in GitHub</ExternalLink>. Merging your changes to master will automatically publish a new build (with Netlify).</p>
+                  <p>To add more scores, <ExternalLink href="https://github.com/PagerDuty/elo/edit/master/src/scores.json">edit the JSON file in GitHub</ExternalLink>. Merging your changes to master will automatically publish a new build (via Netlify).</p>
                 </div>
               </div>
             </div>
