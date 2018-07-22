@@ -88,7 +88,7 @@ class App extends Component {
             <div className="container">
               <div className="row justify-content-center">
                 <div className="col-md-3">
-                  <img className="w-100 rounded-circle border-translucent" src={arpad} />
+                  <img className="w-100 rounded-circle border-translucent" alt="Arpad Elo's face" src={arpad} />
                 </div>
                 <div className="col-md-6">
                   <h5><strong>Arpad Emrick Elo</strong></h5>
