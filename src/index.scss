@@ -46,3 +46,7 @@ header h1 {
 section {
   font-family: "fantasque_sans_monoregular";
 }
+
+.border-translucent {
+  border: 2px solid rgba(255, 255, 255, 0.24);
+}

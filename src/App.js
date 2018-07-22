@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import arpad from './arpadelo.jpg'
 
 function RankingList({ list }) {
   return (
@@ -41,6 +42,18 @@ function ScoresList({ list }) {
   )
 }
 
+function ExternalLink({ href, children }) {
+  return (
+    <a rel="noopener noreferrer" target="_blank" href={href}>{children}</a>
+  )
+}
+
+class ExplorableEloExplanation extends Component {
+  render() {
+    return []
+  }
+}
+
 class App extends Component {
   constructor(props) {
     super(props)
@@ -56,6 +69,8 @@ class App extends Component {
     })
   }
   render() {
+    // color scheme for sections
+    // https://coolors.co/ffe3d1-ffd4d1-ffc1c7-f9b8cc-ffc6e8
     const { configs } = this.props
     const currConf = configs[this.state.currConfKey]
     return (
@@ -64,16 +79,45 @@ class App extends Component {
           <h1 className="">PagerDuty's<br/><span>FIFA 18</span><br/>Elo Board</h1>
         </header>
         <main>
-          <section className="pb-5" style={{ backgroundColor: "#ffe5d9" }}>
+          <section className="pb-5" style={{ backgroundColor: "#ffe3d1" }}>
             <h2 className="text-center py-4 mb-5 subtitle">ranking</h2>
             <RankingList list={currConf['ranking']} />
           </section>
-          <section className="pb-5" style={{ backgroundColor: "#ffcad4" }}>
+          <section className="pb-5" style={{ backgroundColor: "#ffd4d1" }}>
+            <h2 className="text-center py-4 mb-5 subtitle">about the inventor and namesake</h2>
+            <div className="container">
+              <div className="row justify-content-center">
+                <div className="col-md-3">
+                  <img className="w-100 rounded-circle border-translucent" src={arpad} />
+                </div>
+                <div className="col-md-6">
+                  <h5><strong>Arpad Emrick Elo</strong></h5>
+                  <p><em>1903-1992</em></p>
+                  <p>Born in Egyházaskesző, Austro-Hungarian Empire (now located in modern-day Hungary), Arpad was the inventor of the Elo ranking system, a physics professor at Marquette University in Wisconsin, a master-level Chess player, a nine-time champion or co-champion of Wisconsin between 1935 and 1961, and a World Chess Hall of Fame inductee (circa 1988).</p>
+                  <p>If you're curious, check out the Wikipedia pages for the <ExternalLink href="https://en.wikipedia.org/wiki/Elo_rating_system">Elo ranking system</ExternalLink> or <ExternalLink href="https://en.wikipedia.org/wiki/Arpad_Elo">Arpad Elo</ExternalLink> himself.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section className="pb-5" style={{ backgroundColor: "#ffc1c7" }}>
+            <h2 className="text-center py-4 mb-5 subtitle">how the original system works</h2>
+            <ExplorableEloExplanation />
+            <div className="container text-center">
+              <p>work in progress...</p>
+            </div>
+          </section>
+          <section className="pb-5" style={{ backgroundColor: "#f9b8cc" }}>
+            <h2 className="text-center py-4 mb-5 subtitle">the hamdoun modification</h2>
+            <div className="container text-center">
+              <p>work in progress...</p>
+            </div>
+          </section>
+          <section className="pb-5" style={{ backgroundColor: "#ffc6e8" }}>
             <h2 className="text-center py-4 mb-5 subtitle">scores</h2>
             <div className="container">
               <div className="row justify-content-center">
-                <div className="col-md-6 text-center">
-                  <p>To add more scores, <a rel="noopener noreferrer" target="_blank" href="https://github.com/PagerDuty/elo/edit/master/src/scores.json">edit the JSON file in GitHub</a>. Once you merge to master, Netlify will create a new build</p>
+                <div className="col-md-6 col-lg-5 text-center">
+                  <p>To add more scores, <ExternalLink href="https://github.com/PagerDuty/elo/edit/master/src/scores.json">edit the JSON file in GitHub</ExternalLink>. Merging your changes to master will automatically publish a new build (with Netlify).</p>
                 </div>
               </div>
             </div>
