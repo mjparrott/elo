@@ -107,7 +107,7 @@ class App extends Component {
             </div>
           </section>
           <section className="pb-5" style={{ backgroundColor: "#f9b8cc" }}>
-            <h2 className="text-center py-4 mb-5 subtitle">the hamdoun modification</h2>
+            <h2 className="text-center py-4 mb-5 subtitle">the bashir modification</h2>
             <div className="container text-center">
               <p>work in progress...</p>
             </div>
